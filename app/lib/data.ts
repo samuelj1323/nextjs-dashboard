@@ -72,6 +72,7 @@ export async function fetchCardData() {
     const numberOfCustomers = Number(data[1][0].count ?? "0");
     const totalPaidInvoices = formatCurrency(data[2][0].paid ?? "0");
     const totalPendingInvoices = formatCurrency(data[2][0].pending ?? "0");
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     return {
       numberOfCustomers,
